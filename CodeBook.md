@@ -1,4 +1,4 @@
-##Tidy dataset: code book
+## Tidy dataset: code book
 
 The script "run_analysis.R" creates a tidy dataset from the  
 "Human Activity Recognition Using Smartphones Data Set" 
@@ -21,11 +21,11 @@ The scripts also computes a second tidy table, containg the mean of each variabl
 (measurement type and coordinate) across all measurements for each subject and activity.
 The result is saved in the file "tidy_summary.txt".
 
-###Variables (for both dataset):
+### Variables (for both dataset):
 
-*Subject: Identifies the subject who performed the activity. Its range is from 1 to 30.
+* Subject: Identifies the subject who performed the activity. Its range is from 1 to 30.
 
-*Activity: the activity performed by the subject during the measurement. Takes one of the following values: 
+* Activity: the activity performed by the subject during the measurement. Takes one of the following values: 
 WALKING
 , WALKING_UPSTAIRS
 , WALKING_DOWNSTAIRS
@@ -34,7 +34,7 @@ WALKING
 , LAYING
 
 
-*Measurement: The quantity being measured. Takes one of the following values:
+* Measurement: The quantity being measured. Takes one of the following values:
 tBodyAcc,
 tGravityAcc,
 tBodyAccJerk,
@@ -53,11 +53,11 @@ fBodyAccJerkMag,
 fBodyGyroMag,
 fBodyGyroJerkMag,
 
-*Coordinate: The coordinate being measured, if applicable. Takes the value X, Y or Z, or an empty string. 
+* Coordinate: The coordinate being measured, if applicable. Takes the value X, Y or Z, or an empty string. 
 
-*mean: The mean value of the variable estimated from the signal. Each variable is normalized and bounded within [-1,1].
+* mean: The mean value of the variable estimated from the signal. Each variable is normalized and bounded within [-1,1].
 
-*std ("tidy_data.txt"):The standard deviation of the variable estimated from the signal. Each variable is normalized and bounded within [-1,1].
+* std ("tidy_data.txt"):The standard deviation of the variable estimated from the signal. Each variable is normalized and bounded within [-1,1].
 
 
 
