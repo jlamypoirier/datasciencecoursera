@@ -26,32 +26,34 @@ The result is saved in the file "tidy_summary.txt".
 * Subject: Identifies the subject who performed the activity. Its range is from 1 to 30.
 
 * Activity: the activity performed by the subject during the measurement. Takes one of the following values: 
-WALKING
-, WALKING_UPSTAIRS
-, WALKING_DOWNSTAIRS
-, SITTING
-, STANDING
-, LAYING
+  * WALKING
+
+  * WALKING_UPSTAIRS
+  * WALKING_DOWNSTAIRS
+  * SITTING
+  * STANDING
+
+  * LAYING
 
 
 * Measurement: The quantity being measured. Takes one of the following values:
-tBodyAcc,
-tGravityAcc,
-tBodyAccJerk,
-tBodyGyro,
-tBodyGyroJerk,
-tBodyAccMag,
-tGravityAccMag,
-tBodyAccJerkMag,
-tBodyGyroMag,
-tBodyGyroJerkMag,
-fBodyAcc,
-fBodyAccJerk,
-fBodyGyro,
-fBodyAccMag,
-fBodyAccJerkMag,
-fBodyGyroMag,
-fBodyGyroJerkMag,
+  * tBodyAcc
+  * tGravityAcc
+  * tBodyAccJerk
+  * tBodyGyro
+  * tBodyGyroJerk
+  * tBodyAccMag
+  * tGravityAccMag
+  * tBodyAccJerkMag
+  * tBodyGyroMag
+  * tBodyGyroJerkMag
+  * fBodyAcc
+  * fBodyAccJerk
+  * fBodyGyro
+  * fBodyAccMag
+  * fBodyAccJerkMag
+  * fBodyGyroMag
+  * fBodyGyroJerkMag
 
 * Coordinate: The coordinate being measured, if applicable. Takes the value X, Y or Z, or an empty string. 
 
