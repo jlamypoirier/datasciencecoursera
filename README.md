@@ -1,4 +1,4 @@
-#Tidy dataset
+##Tidy dataset
 
 The script "run_analysis.R" creates a tidy dataset from the  
 "Human Activity Recognition Using Smartphones Data Set" 
