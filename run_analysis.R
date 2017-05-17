@@ -37,7 +37,7 @@ dat4=separate(dat3,Measurement,c("Measurement","Type","Coordinate"))
 dat5=select(spread(dat4,Type,Value),-Id)
 
 #Compute the mean of each variable for each subject and activity
-dat6=summarize(group_by(dat5,Activity,Subject,Measurement),mean=mean(mean),std=mean(std))
+dat6=summarize(group_by(dat5,Activity,Subject,Measurement,Coordinate),mean=mean(mean),std=mean(std))
 
 #Write the two resulting datasets
 write.table(dat5,"tidy_data.txt",row.name=FALSE)

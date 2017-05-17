@@ -59,7 +59,7 @@ The result is saved in the file "tidy_summary.txt".
 
 * mean: The mean value of the variable estimated from the signal. Each variable is normalized and bounded within [-1,1].
 
-* std ("tidy_data.txt"):The standard deviation of the variable estimated from the signal. Each variable is normalized and bounded within [-1,1].
+* std:The standard deviation of the variable estimated from the signal. Each variable is normalized and bounded within [-1,1].
 
 
 
