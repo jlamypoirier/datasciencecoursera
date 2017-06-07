@@ -1,0 +1,68 @@
+---
+title: "Prediction"
+author: "Joel LP"
+date: "June 7, 2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+We build a model to predict the quality of exercise. We consider the human activity recognition dataset (<http://groupware.les.inf.puc-rio.br/har>) and build a random forest model with 5-fold cross-validation. The model has an estimated accuracy of 99.5%.
+
+
+## Data Processing
+
+We load the required library.
+```{r message=FALSE}
+knitr::opts_chunk$set(echo=T, cache = TRUE)
+library(caret)
+```
+
+We load the training dataset, assumed to be in the working directory.
+```{r}
+training=read.csv("pml-training.csv")
+```
+
+We are trying to predict the *classe* variable in the model from the rest of the data. We now look at the dataset (see appendx) to find which variables to use in the model. First we notice that the first 7 variables (holding an index, the user, a timestamp and a training window) may not be relevant to the model, so we will remove them. We also find several variables containing lots of NA's and several factor variables (which are actually also numeric variables with missing values). While these may be relevant, we will ignore them as the remaining variables will allow for a very good accuracy. Here is the code for selecting the relevant variable names:
+```{r}
+vars=lapply(training,function(x)(class(x)%in%c("numeric","integer"))&mean(is.na(x))<0.1)
+var_names1=names(vars[as.logical(vars)])
+var_names=var_names1[5:length(var_names1)]
+```
+
+## Model
+
+We try a simple model, a random forest with 5-fold cross-validation. Random forests is a simple and easy to use model type that usually works well, so it is a good idea to try it first. Cross validation is used to obtain a fair estimate of the generalization error. We also use fixed seeds for reproducibility.
+```{r message=FALSE}
+seeds=list(c(44,55,66),c(144,155,166),c(244,255,266),c(344,355,366),c(444,455,466),999)
+m=train(training[,var_names],training$classe,
+      method="rf",trControl=trainControl(method="cv",number=5,seeds=seeds))
+```
+
+We look at the resulting model.
+```{r}
+m$finalModel
+```
+The model has an estimated accuracy of 99.5%, which is very good, so we will not need to refine it. 
+
+For comparison purposes we train another model based on linear discriminant analysis.
+```{r message=FALSE}
+m1=train(training[,var_names],training$classe,
+      method="lda",trControl=trainControl(method="cv",number=5,seeds=seeds))
+m1
+```
+This model has an accuracy of 70%, which is a lot worse.
+
+## Appendix
+
+Here is an overview of the dataset
+```{r}
+str(training)
+```
+
+
+
+
+
+
+
